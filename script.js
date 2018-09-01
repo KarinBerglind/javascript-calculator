@@ -7,24 +7,20 @@ textInput.addEventListener('change', function (event) {
   everyInput = event.target.value.split('');
 });
 
-const allButtons = document.querySelectorAll('button');
+const allButtons = document.querySelectorAll("#calc_buttons");
 
 for (let button of allButtons) {
   button.addEventListener('click', function (event) {
-    if (event.target.innerText == "=") {
-      let result = eval(everyInput.join(""));
-      everyInput = [];
-      textInput.value = result;
-    } else {
-      everyInput.push(event.target.innerText);
-      textInput.value = everyInput.join(" ");
-    }
-
+    everyInput.push(event.target.innerText);
+    textInput.value = everyInput.join(" ");
   })
-
 }
 
-
+document.querySelector("#eq").addEventListener("click", function (event) {
+  let result = eval(everyInput.join(""));
+  everyInput = [];
+  textInput.value = result;
+})
 
 /**
  * total is the current total
