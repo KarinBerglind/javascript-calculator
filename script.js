@@ -22,6 +22,11 @@ document.querySelector("#eq").addEventListener("click", function (event) {
   textInput.value = result;
 })
 
+document.querySelector("#c").addEventListener("click", function (event) {
+  everyInput = [];
+  textInput.value = "";
+})
+
 /**
  * total is the current total
  */
