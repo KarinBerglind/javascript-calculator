@@ -1,4 +1,4 @@
-//const textInput = document.querySelector('#textInput');
+const textInput = document.querySelector('#textInput');
 const everyInput = [];
 
 textInput.addEventListener('change', function (event) {
@@ -10,11 +10,18 @@ const allButtons = document.querySelectorAll('button');
 
 for (let button of allButtons) {
   button.addEventListener('click', function (event) {
-    console.log(event.target.innerText);
-    console.log(event.target.id);
-    console.log(event.target.dataset.name);
+    everyInput.push(event.target.innerText);
+   // console.log(event.target.innerText);
+   if (event.target.innerText=="="){
+    let result =  add(everyInput[0], everyInput[2]);
+   
+  console.log(result) 
+  }
   })
+
 }
+
+
 
 /**
  * total is the current total
@@ -26,19 +33,20 @@ let total = 0;
 let memory = [];
 
 function add(firstNumber, secondNumber) {
-  return firstNumber + secondNumber;
+  return parseInt(firstNumber) + parseInt(secondNumber);
 }
 
-function subtract() {
-  // Implement me
+function subtract(firstNumber, secondNumber) {
+  return firstNumber - secondNumber;
+
 }
 
-function multiply() {
-  // Implement me
+function multiply(firstNumber, secondNumber) {
+  return firstNumber * secondNumber;
 }
 
-function divide() {
-  // Implement me
+function divide(firstNumber, secondNumber) {
+  firstNumber / secondNumber;
 }
 
 function getTotal() {
