@@ -14,7 +14,7 @@ for (let button of allButtons) {
     if (event.target.innerText == "=") {
       let result = eval(everyInput.join(""));
       everyInput = [];
-      console.log(result);
+      textInput.value = result;
     } else {
       everyInput.push(event.target.innerText);
     }
