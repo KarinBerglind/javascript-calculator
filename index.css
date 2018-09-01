@@ -14,5 +14,6 @@ button {
     border-radius: 50%;
 }
 
-    
+.textInput{
+    text-align: right;
 }
