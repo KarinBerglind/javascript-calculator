@@ -17,6 +17,7 @@ for (let button of allButtons) {
       textInput.value = result;
     } else {
       everyInput.push(event.target.innerText);
+      textInput.value = everyInput.join(" ");
     }
 
   })
