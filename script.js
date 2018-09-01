@@ -1,5 +1,6 @@
 const textInput = document.querySelector('#textInput');
-const everyInput = [];
+let everyInput = [];
+const arithmetic = [];
 
 textInput.addEventListener('change', function (event) {
   // Is input a value? isNaN
@@ -10,13 +11,14 @@ const allButtons = document.querySelectorAll('button');
 
 for (let button of allButtons) {
   button.addEventListener('click', function (event) {
-    everyInput.push(event.target.innerText);
-   // console.log(event.target.innerText);
-   if (event.target.innerText=="="){
-    let result =  add(everyInput[0], everyInput[2]);
-   
-  console.log(result) 
-  }
+    if (event.target.innerText == "=") {
+      let result = eval(everyInput.join(""));
+      everyInput = [];
+      console.log(result);
+    } else {
+      everyInput.push(event.target.innerText);
+    }
+
   })
 
 }
