@@ -3,7 +3,6 @@ let everyInput = [];
 const arithmetic = [];
 
 textInput.addEventListener('change', function (event) {
-  // Is input a value? isNaN
   everyInput = event.target.value.split('');
 });
 
@@ -18,8 +17,9 @@ for (let button of allButtons) {
 
 document.querySelector("#eq").addEventListener("click", function (event) {
   let result = eval(everyInput.join(""));
-  everyInput = [];
   textInput.value = result;
+  document.querySelector("#result p").innerHTML = everyInput.join(" ") + "=" + result;
+  everyInput = [];
 })
 
 document.querySelector("#c").addEventListener("click", function (event) {
